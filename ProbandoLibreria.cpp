@@ -6,7 +6,7 @@
 
 int main()
 {
-   bitmap_image image("simple.bmp");
+   bitmap_image image("Maze.bmp");
    int i=0,c=0, j=0, X=0, Y=0;
    std::string st, add,s;
    if (!image)
@@ -21,7 +21,7 @@ unsigned int cordenadaX=0;
 unsigned int cordenadaY=0;
    const unsigned int height = image.height();
    const unsigned int width  = image.width();
-   fs.open ("MazeEntradaSalida.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+   fs.open ("MazeEntradaSalidaGrande.txt", std::fstream::in | std::fstream::out | std::fstream::app);
    fs<<height<<" "<<width<<"\n"<<"\n";
    j=0;
 for (std::size_t y = 0; y < height; ++y ){
@@ -43,15 +43,30 @@ for (std::size_t y = 0; y < height; ++y ){
           fs << "p";// acepta que hay color blanco porque contiene todos los colores. negro ausencia de color.
           /* code */
       }else{
-        if (x==1 and y==1){
+        if (x==1 and y==41){
           fs << "e";
         }
-        else if (x==510 and y==510/* condition */) {
+        else if (x==10198 and y==10238/* condition */) {
           /* code */fs << "s";
         }
         else{
           fs << "l";
-        }  {
+        }  {//if (x==1 and y==41){ //y=1 imagen chica 512 x 512
+          //fs << "e"; //y==41 imagen grande 10240x10240
+        //}
+        //else if (x==10198 and y==10238/* condition */) { //x=510 y=510 imagen chica 512x512
+      //    /* code */fs << "s"; // x==10198 and y ==10238 imagen grande 10240x10240
+        //}
+        //else{
+          //fs << "l";
+        //}  {
+
+        //   acepta que hay color blanco porque contiene todos los colores. negro ausencia de color.
+
+      //  }
+        /* code */
+      }
+
 
         //   acepta que hay color blanco porque contiene todos los colores. negro ausencia de color.
 
